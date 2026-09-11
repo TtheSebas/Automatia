@@ -1,0 +1,125 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection {
+  background: radial-gradient(circle at 50% 10%, rgba(244, 235, 221, 0.6) 0%, transparent 60%);
+  text-align: center;
+}
+
+.headerContainer {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainTitle {
+  font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.mainSubtitle {
+  font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faqSection {
+  background-color: var(--bg-primary);
+  padding-top: 0;
+}
+
+.accordionContainer {
+  max-width: 840px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.extraHelpCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .extraHelpCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .extraHelpText {
+    flex: 1;
+    max-width: 500px;
+  }
+}
+
+.extraHelpTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.extraHelpDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.extraHelpButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 480px) {
+  .extraHelpButtons {
+    flex-direction: row;
+  }
+}
+
+.helpBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.925rem;
+  font-weight: 600;
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--color-primary);
+  transition: background-color var(--transition-fast);
+}
+
+.helpBtn:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.helpBtnSecondary {
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  border-color: var(--border-medium);
+}
+
+.helpBtnSecondary:hover {
+  background-color: var(--bg-secondary);
+}

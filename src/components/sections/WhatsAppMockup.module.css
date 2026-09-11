@@ -1,0 +1,434 @@
+.mockupWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+.chatWindow {
+  background-color: #F8F5EF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Chat Header */
+.chatHeader {
+  background-color: #EDE4D4;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.9rem 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.headerAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.onlineBadge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 11px;
+  height: 11px;
+  background-color: #25D366;
+  border: 2px solid #EDE4D4;
+  border-radius: 50%;
+}
+
+.headerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.contactNameGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contactName {
+  font-size: 0.975rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.botPill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  background-color: var(--color-sand-light);
+  color: var(--color-primary);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-sand);
+}
+
+.statusText {
+  font-size: 0.75rem;
+  color: var(--color-sage);
+  font-weight: 600;
+}
+
+.businessBadge {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  color: var(--color-sage);
+  background-color: rgba(113, 129, 106, 0.12);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.shieldIcon {
+  flex-shrink: 0;
+}
+
+@media (min-width: 480px) {
+  .businessBadge {
+    display: inline-flex;
+  }
+}
+
+/* Chat Body */
+.chatBody {
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-image: radial-gradient(rgba(41, 37, 34, 0.035) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+.dateDivider {
+  text-align: center;
+  margin: 0.25rem 0;
+}
+
+.dateDivider span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background-color: rgba(220, 199, 175, 0.35);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+}
+
+/* Bubbles */
+.message {
+  display: flex;
+  width: 100%;
+}
+
+.incoming {
+  justify-content: flex-start;
+}
+
+.outgoing {
+  justify-content: flex-end;
+}
+
+.bubble {
+  max-width: 90%;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(41, 37, 34, 0.05);
+}
+
+.incoming .bubble {
+  background-color: #FFFFFF;
+  color: var(--text-primary);
+  border-top-left-radius: 2px;
+  border: 1px solid rgba(41, 37, 34, 0.06);
+}
+
+.outgoing .bubble {
+  background-color: #FFFDF9;
+  color: var(--text-primary);
+  border-top-right-radius: 2px;
+  border: 1px solid rgba(216, 107, 74, 0.18);
+  border-left: 3px solid var(--color-primary);
+}
+
+.messageText {
+  font-size: 0.925rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+  margin-bottom: 0.4rem;
+}
+
+.messageMeta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
+.timestamp {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.checkDouble {
+  color: #34B7F1;
+}
+
+/* System query indicator chip */
+.systemCallChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.6rem;
+  border: 1px solid var(--color-primary-border);
+  font-weight: 600;
+}
+
+/* Calculation summary table */
+.calcSummary {
+  background-color: #FAF4EB;
+  border: 1px dashed var(--color-sand);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  margin: 0.6rem 0;
+  font-size: 0.85rem;
+}
+
+.calcRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+  color: var(--text-secondary);
+}
+
+.calcDivider {
+  height: 1px;
+  background-color: var(--border-subtle);
+  margin: 0.4rem 0;
+}
+
+.calcTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 0.925rem;
+}
+
+.totalValue {
+  color: var(--color-primary);
+}
+
+/* PDF Attachment Card */
+.pdfAttachment {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.7rem 0 0.5rem 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pdfAttachment:hover {
+  border-color: var(--color-primary);
+  background-color: #FFFAF5;
+}
+
+.pdfIconBox {
+  width: 36px;
+  height: 40px;
+  background-color: #FFF0EB;
+  border-radius: var(--radius-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.pdfFileIcon {
+  color: var(--color-primary);
+}
+
+.pdfBadge {
+  position: absolute;
+  bottom: 2px;
+  font-size: 0.55rem;
+  font-weight: 800;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 0.05rem 0.25rem;
+  border-radius: 2px;
+}
+
+.pdfInfo {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pdfTitle {
+  font-size: 0.825rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pdfDetails {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.downloadIcon {
+  color: var(--color-primary);
+  padding: 0.35rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-primary-light);
+}
+
+/* Human in the loop review badge */
+.humanReviewNotice {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-sage);
+  background-color: var(--color-sage-light);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-sage-border);
+  margin-top: 0.4rem;
+}
+
+.reviewIcon {
+  flex-shrink: 0;
+}
+
+/* Chat Footer Bar */
+.chatFooter {
+  background-color: #EDE4D4;
+  border-top: 1px solid var(--border-subtle);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.inputBar {
+  flex: 1;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  padding: 0.55rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.sendButtonPlaceholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Floating Flow Banner below */
+.floatingFlowBanner {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.25rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flowBadge {
+  display: flex;
+}
+
+.flowPill {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-full);
+}
+
+.flowSequence {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.stepItem {
+  background-color: var(--bg-secondary);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-sm);
+}
+
+.stepControl {
+  background-color: var(--color-sage-light);
+  color: var(--color-sage);
+  border: 1px solid var(--color-sage-border);
+}
+
+.flowSeparator {
+  color: var(--color-primary);
+  font-weight: bold;
+}

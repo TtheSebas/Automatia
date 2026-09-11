@@ -1,0 +1,79 @@
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.65rem 1rem;
+  background-color: rgba(255, 249, 241, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-medium);
+  box-shadow: 0 -4px 16px rgba(41, 37, 34, 0.08);
+  z-index: 95;
+  display: block;
+}
+
+.ctaButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(216, 107, 74, 0.3);
+  transition: background-color var(--transition-fast);
+}
+
+.ctaButton:active {
+  background-color: var(--color-primary-hover);
+}
+
+.leftInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  color: #FFFFFF;
+}
+
+.textGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 0.725rem;
+  opacity: 0.9;
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.22);
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+@media (min-width: 769px) {
+  .container {
+    display: none;
+  }
+}

@@ -1,0 +1,170 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.headerBlock {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+}
+
+/* Flow Track */
+.flowTrack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .flowTrack {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .flowTrack {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+}
+
+.flowCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: var(--shadow-xs);
+  transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.flowCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-medium);
+}
+
+/* Human focused cards */
+.humanCard {
+  background-color: #FBFDF9;
+  border-color: var(--color-sage-border);
+  box-shadow: 0 4px 16px rgba(113, 129, 106, 0.1);
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.iconCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.humanIconCircle {
+  background-color: var(--color-sage-light);
+  color: var(--color-sage);
+}
+
+.stepNumber {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-sand);
+  letter-spacing: -0.02em;
+}
+
+.stepTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.humanBadge {
+  margin-top: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-sage);
+  background-color: var(--color-sage-light);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius-full);
+  align-self: flex-start;
+}
+
+/* Clarification Callout Box */
+.clarificationBox {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.clarificationHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.alertIcon {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.calloutTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.calloutText {
+  font-size: 0.975rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.highlightQuote {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  background-color: var(--color-primary-light);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  margin-top: 0.5rem;
+}

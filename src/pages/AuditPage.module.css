@@ -1,0 +1,230 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection {
+  background: radial-gradient(circle at 50% 10%, rgba(244, 235, 221, 0.6) 0%, transparent 60%);
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.headerContainer {
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainTitle {
+  font-size: clamp(2.2rem, 3.8vw, 3.1rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+}
+
+.mainSubtitle {
+  font-size: clamp(1.1rem, 1.3vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.formSection {
+  background-color: var(--bg-primary);
+  padding-top: 1rem;
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+@media (min-width: 990px) {
+  .mainGrid {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 4rem;
+  }
+}
+
+/* Left Column */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.timelineCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
+}
+
+.timelineHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.badgeTime {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  background-color: var(--color-primary);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.05em;
+}
+
+.timelineLabel {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timelineSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.timelineStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.stepNumCircle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepTitle {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Reassurance Card */
+.reassuranceCard {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.reassuranceTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.reassuranceList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.reassuranceList li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.checkIcon {
+  color: var(--color-sage);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* Promise Card */
+.promiseCard {
+  background-color: var(--color-sage-light);
+  border: 1px solid var(--color-sage-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.shieldIcon {
+  color: var(--color-sage);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.promiseCard strong {
+  display: block;
+  font-size: 0.925rem;
+  color: var(--color-sage-hover);
+  margin-bottom: 0.25rem;
+}
+
+/* Right Column */
+.formCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.formTitle {
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  color: var(--text-primary);
+}
+
+.formSub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
