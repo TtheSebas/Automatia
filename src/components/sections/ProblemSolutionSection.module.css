@@ -1,0 +1,208 @@
+.section {
+  background-color: var(--bg-subtle);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.comparisonGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (min-width: 860px) {
+  .comparisonGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Card Manual */
+.cardManual {
+  background-color: #121824;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.cardHeaderManual {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.headerTitleWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.alertTag {
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #F87171;
+}
+
+.cardTitle {
+  font-size: 1.45rem;
+  color: var(--text-primary);
+}
+
+.timeTagManual {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: #FCA5A5;
+  background-color: rgba(239, 68, 68, 0.12);
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.listWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.painItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.painIconBox {
+  color: #EF4444;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.painTitle {
+  display: block;
+  font-size: 1rem;
+  color: #F1F5F9;
+  margin-bottom: 0.2rem;
+}
+
+.painDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.footerSummaryManual {
+  background-color: rgba(239, 68, 68, 0.08);
+  border: 1px dashed rgba(239, 68, 68, 0.3);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.footerStat {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #FCA5A5;
+}
+
+/* Card Automatia */
+.cardAutomatia {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-active);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.75rem, 3.5vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(37, 99, 235, 0.15);
+}
+
+.badgePopular {
+  position: absolute;
+  top: -12px;
+  right: 28px;
+  background: linear-gradient(135deg, var(--color-blue), var(--color-emerald));
+  color: #FFFFFF;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 0.3rem 0.85rem;
+  border-radius: var(--radius-full);
+}
+
+.cardHeaderAutomatia {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.emeraldTag {
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #34D399;
+}
+
+.timeTagEmerald {
+  font-size: 0.775rem;
+  font-weight: 800;
+  color: #34D399;
+  background-color: rgba(16, 185, 129, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.benefitIconBox {
+  color: var(--color-emerald);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.benefitTitle {
+  display: block;
+  font-size: 1rem;
+  color: #F8FAFC;
+  margin-bottom: 0.2rem;
+}
+
+.benefitDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.footerSummaryEmerald {
+  background-color: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.footerStatEmerald {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #34D399;
+}

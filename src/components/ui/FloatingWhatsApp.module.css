@@ -1,0 +1,54 @@
+.wrapper {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  background-color: #25D366;
+  color: #FFFFFF;
+  padding: 0.75rem 1.15rem;
+  border-radius: var(--radius-full);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+  position: relative;
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.6);
+  background-color: #20BA5A;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.badgeText {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .badgeText {
+    display: inline-block;
+  }
+}
+
+.onlinePulse {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
+  background-color: #10B981;
+  border: 2px solid #0B0F17;
+  border-radius: 50%;
+  animation: pulseWarm 2s infinite ease-in-out;
+}
