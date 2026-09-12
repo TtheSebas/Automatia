@@ -13,8 +13,9 @@ export const siteConfig = {
   
   whatsappDefaultMessage: "Hola Automatia, vi su sistema de cotizaciones y me gustaria ver una demostracion para mi negocio",
 
-  // Video demostrativo de n8n (Loom o YouTube)
-  demoVideoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  // Video demostrativo de Google Drive (Modo Embed / Preview para iframe)
+  demoVideoUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/preview",
+  demoVideoDirectUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/view?usp=sharing",
 
   get whatsappUrl() {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappDefaultMessage)}`;

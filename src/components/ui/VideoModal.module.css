@@ -45,6 +45,42 @@
   font-weight: 700;
 }
 
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.externalDriveBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #60A5FA;
+  background-color: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.35);
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.externalDriveBtn:hover {
+  background-color: rgba(37, 99, 235, 0.25);
+  color: #FFFFFF;
+}
+
+.driveText {
+  display: none;
+}
+
+@media (min-width: 540px) {
+  .driveText {
+    display: inline;
+  }
+}
+
 .closeBtn {
   background: transparent;
   border: 1px solid var(--border-subtle);
