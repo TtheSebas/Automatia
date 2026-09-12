@@ -15,8 +15,8 @@ export const siteConfig = {
 
   // Video demostrativo en calidad nativa Full HD 1080p (FastStart optimizado)
   demoVideoUrl: "/demo-agentico-1080p.mp4",
-  demoVideoDriveEmbedUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/preview",
-  demoVideoDirectUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/view?usp=sharing",
+  demoVideoDriveEmbedUrl: "https://drive.google.com/file/d/16Eg3_cqSMnvcRl33IpAyJm2drnv4iB5N/preview",
+  demoVideoDirectUrl: "https://drive.google.com/file/d/16Eg3_cqSMnvcRl33IpAyJm2drnv4iB5N/view?usp=sharing",
 
   get whatsappUrl() {
     return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(this.whatsappDefaultMessage)}`;
