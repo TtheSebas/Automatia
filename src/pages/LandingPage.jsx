@@ -56,7 +56,7 @@ export default function LandingPage() {
 
     handleTabChange(nextId);
 
-    // Cooldown de 900ms para absorber la inercia de scroll del touchpad/mouse
+    // Cooldown de 1300ms para absorber la inercia de scroll y permitir que la animación termine suavemente
     setTimeout(() => {
       isTransitioningRef.current = false;
       setIsAutoAdvancing(false);
@@ -64,7 +64,7 @@ export default function LandingPage() {
         clearTimeout(autoAdvanceTimeoutRef.current);
         autoAdvanceTimeoutRef.current = null;
       }
-    }, 900);
+    }, 1300);
   };
 
   const handleOpenLegal = (type) => {
@@ -137,7 +137,7 @@ export default function LandingPage() {
         if (!autoAdvanceTimeoutRef.current) {
           autoAdvanceTimeoutRef.current = setTimeout(() => {
             triggerNextSection(nextInfo.nextId);
-          }, 450); // 450ms al llegar al final
+          }, 950); // 950ms (+0.5s para una transición más pausada y cómoda)
         }
       } else {
         if (autoAdvanceTimeoutRef.current) {
@@ -148,15 +148,20 @@ export default function LandingPage() {
       }
     };
 
-    // Si el usuario scrolea hacia abajo con la rueda estando cerca del final, avanzar al instante
+    // Si el usuario scrolea hacia abajo con la rueda estando al final, activar el reloj con el mismo ritmo suave
     const handleWheel = (e) => {
       if (isTransitioningRef.current) return;
-      if (e.deltaY > 15) {
+      if (e.deltaY > 10) {
         const scrollY = window.pageYOffset || document.documentElement.scrollTop;
         const windowHeight = window.innerHeight;
         const docHeight = document.documentElement.scrollHeight;
-        if (windowHeight + scrollY >= docHeight - 80) {
-          triggerNextSection(nextInfo.nextId);
+        if (windowHeight + scrollY >= docHeight - 85) {
+          setIsAutoAdvancing(true);
+          if (!autoAdvanceTimeoutRef.current) {
+            autoAdvanceTimeoutRef.current = setTimeout(() => {
+              triggerNextSection(nextInfo.nextId);
+            }, 950);
+          }
         }
       }
     };
@@ -173,12 +178,17 @@ export default function LandingPage() {
       if (e.changedTouches && e.changedTouches.length > 0) {
         const touchEndY = e.changedTouches[0].clientY;
         const swipeDistance = touchStartY - touchEndY;
-        if (swipeDistance > 30) {
+        if (swipeDistance > 25) {
           const scrollY = window.pageYOffset || document.documentElement.scrollTop;
           const windowHeight = window.innerHeight;
           const docHeight = document.documentElement.scrollHeight;
-          if (windowHeight + scrollY >= docHeight - 80) {
-            triggerNextSection(nextInfo.nextId);
+          if (windowHeight + scrollY >= docHeight - 85) {
+            setIsAutoAdvancing(true);
+            if (!autoAdvanceTimeoutRef.current) {
+              autoAdvanceTimeoutRef.current = setTimeout(() => {
+                triggerNextSection(nextInfo.nextId);
+              }, 950);
+            }
           }
         }
       }
