@@ -97,7 +97,7 @@ export default function LandingPage() {
           nextId: 'precios',
           badge: 'Siguiente Sección (4 de 5)',
           title: 'Planes y Precios sin Riesgo',
-          desc: 'Prueba Piloto $0 por 3 días, Plan Base $250 o Integral $250 + $40/mes.'
+          desc: 'Prueba Piloto $0 por 3 días, Plan Base $150 o Integral $150 + $30/mes.'
         };
       case 'precios':
         return {

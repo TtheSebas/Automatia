@@ -32,8 +32,8 @@ export default function PricingSection() {
       id: "integral",
       name: "Agentico Integral + Mantenimiento",
       badge: "MÁS POPULAR Y RECOMENDADO",
-      price: "$250 setup",
-      period: "+ $40 / mes",
+      price: "$150 setup",
+      period: "+ $30 / mes",
       desc: "La solución completa con monitoreo continuo, soporte técnico y actualizaciones ilimitadas de precios.",
       features: [
         "Todo lo incluido en la Implementación Base",
@@ -44,13 +44,13 @@ export default function PricingSection() {
       ],
       ctaText: "Elegir Plan Integral",
       highlight: true,
-      whatsappMsg: "Hola Agentico, deseo contratar el plan Agentico Integral ($250 setup + $40/mes) para mi distribuidora."
+      whatsappMsg: "Hola Agentico, deseo contratar el plan Agentico Integral ($150 setup + $30/mes) para mi distribuidora."
     },
     {
       id: "base",
       name: "Implementación Comercial Base",
       badge: "PAGO ÚNICO",
-      price: "$250",
+      price: "$150",
       period: "pago único",
       desc: "Integración llave en mano para empresas que prefieren gestionar su propio mantenimiento.",
       features: [
@@ -62,7 +62,7 @@ export default function PricingSection() {
       ],
       ctaText: "Solicitar Plan Base",
       highlight: false,
-      whatsappMsg: "Hola Agentico, me interesa contratar la Implementación Comercial Base ($250 pago único)."
+      whatsappMsg: "Hola Agentico, me interesa contratar la Implementación Comercial Base ($150 pago único)."
     }
   ];
 
