@@ -103,7 +103,7 @@ export default function HeroSection({ onSelectTab, onOpenVideo }) {
                     <span className={styles.chatTime}>09:14 AM</span>
                   </div>
                   <p className={styles.chatBody}>
-                    "Don Carlos, necesito cotizar urgente <strong>10 sacos de cemento</strong>, <strong>4 varillas de 12mm</strong> y <strong>2 galones de pintura blanca</strong> para despachar mañana a obra."
+                    "Buenas tardes, necesito cotizar urgente <strong>10 sacos de cemento</strong>, <strong>4 varillas de 12mm</strong> y <strong>2 galones de pintura blanca</strong> para despachar mañana a obra."
                   </p>
                 </div>
               </div>

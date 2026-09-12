@@ -89,7 +89,7 @@ export default function LandingPage() {
         return {
           nextId: 'caso-real',
           badge: 'Siguiente Sección (3 de 5)',
-          title: 'Caso Real Don Carlos & Video Demostrativo',
+          title: 'Caso Real & Video Demostrativo',
           desc: 'Observa el flujo real de n8n: de WhatsApp a PDF oficial en menos de 30 segundos.'
         };
       case 'caso-real':

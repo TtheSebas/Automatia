@@ -158,7 +158,7 @@ export default function LeadCaptureSection() {
                       type="tel"
                       id="whatsapp"
                       required
-                      placeholder="Ej. 0959048059 o +593 95 904 8059"
+                      placeholder="Ej. 0995795486 o +593 99 579 5486"
                       value={formData.whatsapp}
                       onChange={(e) => setFormData({ ...formData, whatsapp: e.target.value })}
                       className={styles.input}

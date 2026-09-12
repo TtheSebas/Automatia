@@ -93,7 +93,7 @@ export default function CaseDemoSection({ onOpenVideo }) {
                   </div>
                   <div className={styles.bubbleIncoming}>
                     <p className={styles.bubbleMsg}>
-                      "Don Carlos, necesito cotizar urgente <strong>10 sacos de cemento</strong>, <strong>4 varillas de 12mm</strong> y <strong>2 galones de pintura blanca</strong> para despachar mañana."
+                      "Buenas tardes, necesito cotizar urgente <strong>10 sacos de cemento</strong>, <strong>4 varillas de 12mm</strong> y <strong>2 galones de pintura blanca</strong> para despachar mañana."
                     </p>
                     <span className={styles.bubbleTimestamp}>09:14 AM · Entregado</span>
                   </div>

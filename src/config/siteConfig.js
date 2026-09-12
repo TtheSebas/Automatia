@@ -7,9 +7,9 @@ export const siteConfig = {
   location: "Ambato / Cobertura a todo Ecuador y LatAm (Remoto)",
   
   // Número de WhatsApp oficial en formato internacional (Ecuador +593)
-  whatsappNumber: "593959048059",
-  whatsappDisplay: "+593 95 904 8059",
-  whatsappLocalDisplay: "0959048059",
+  whatsappNumber: "593995795486",
+  whatsappDisplay: "+593 99 579 5486",
+  whatsappLocalDisplay: "0995795486",
   
   whatsappDefaultMessage: "Hola Agentico, vi su sistema de cotizaciones y me gustaria ver una demostracion para mi negocio",
 
