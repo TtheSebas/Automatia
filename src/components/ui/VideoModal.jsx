@@ -41,15 +41,27 @@ export default function VideoModal({ isOpen, onClose }) {
         </div>
 
         <div className={styles.videoContainer}>
-          {/* Responsive 16:9 Video Box */}
-          <iframe
-            src={siteConfig.demoVideoUrl}
-            title="Demostración Automatia n8n Proformas"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className={styles.iframe}
-          ></iframe>
+          {/* Responsive 16:9 Video Box: Soporta tanto MP4/WebM local como Loom/YouTube/Vimeo */}
+          {siteConfig.demoVideoUrl.match(/\.(mp4|webm|ogg)($|\?)/i) || siteConfig.demoVideoUrl.startsWith('/') ? (
+            <video
+              src={siteConfig.demoVideoUrl}
+              controls
+              autoPlay
+              playsInline
+              className={styles.iframe}
+            >
+              Tu navegador no soporta la reproducción de video HTML5.
+            </video>
+          ) : (
+            <iframe
+              src={siteConfig.demoVideoUrl}
+              title="Demostración Automatia n8n Proformas"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              className={styles.iframe}
+            ></iframe>
+          )}
         </div>
 
         <div className={styles.footerNote}>
