@@ -40,7 +40,7 @@ export default function Footer({ onOpenLegal }) {
                     rel="noopener noreferrer"
                     className={styles.contactLink}
                   >
-                    Abrir Chat Inmediato <ArrowUpRight size={14} />
+                    {siteConfig.whatsappDisplay} <ArrowUpRight size={14} />
                   </a>
                 </div>
               </div>

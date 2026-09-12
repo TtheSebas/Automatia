@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { X, Shield, FileText } from 'lucide-react';
+import { siteConfig } from '../../config/siteConfig';
 import styles from './LegalModal.module.css';
 
 export default function LegalModal({ isOpen, type, onClose }) {
@@ -58,7 +59,7 @@ export default function LegalModal({ isOpen, type, onClose }) {
               </p>
               <h4>4. Jurisdicción y Contacto</h4>
               <p>
-                Servicios operados desde Ambato, Ecuador, con alcance y cobertura técnica para toda la región de América Latina. Dudas contractuales a <code>contacto.automatia.ec@gmail.com</code>.
+                Servicios operados desde Ambato, Ecuador, con alcance y cobertura técnica para toda la región de América Latina. Dudas contractuales a <code>{siteConfig.email}</code>.
               </p>
             </>
           ) : (
@@ -80,7 +81,7 @@ export default function LegalModal({ isOpen, type, onClose }) {
               </p>
               <h4>4. Contacto de Privacidad</h4>
               <p>
-                Para solicitar la baja de datos o consultar sobre las medidas de seguridad, contáctanos en <code>contacto.automatia.ec@gmail.com</code>.
+                Para solicitar la baja de datos o consultar sobre las medidas de seguridad, contáctanos en <code>{siteConfig.email}</code>.
               </p>
             </>
           )}
