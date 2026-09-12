@@ -13,8 +13,9 @@ export const siteConfig = {
   
   whatsappDefaultMessage: "Hola Agentico, vi su sistema de cotizaciones y me gustaria ver una demostracion para mi negocio",
 
-  // Video demostrativo de Google Drive (Modo Embed / Preview para iframe)
-  demoVideoUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/preview",
+  // Video demostrativo en calidad nativa Full HD 1080p (FastStart optimizado)
+  demoVideoUrl: "/demo-agentico-1080p.mp4",
+  demoVideoDriveEmbedUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/preview",
   demoVideoDirectUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/view?usp=sharing",
 
   get whatsappUrl() {
