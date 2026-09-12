@@ -9,7 +9,7 @@ import LeadCaptureSection from '../components/sections/LeadCaptureSection';
 import FloatingWhatsApp from '../components/ui/FloatingWhatsApp';
 import VideoModal from '../components/ui/VideoModal';
 import LegalModal from '../components/ui/LegalModal';
-import { ArrowRight, MessageCircle, RotateCcw } from 'lucide-react';
+import { ArrowDown, MessageCircle } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
 import styles from './LandingPage.module.css';
 
@@ -17,7 +17,10 @@ export default function LandingPage() {
   const [activeTab, setActiveTab] = useState('inicio');
   const [videoOpen, setVideoOpen] = useState(false);
   const [legalModalState, setLegalModalState] = useState({ isOpen: false, type: 'terms' });
+  const [isAutoAdvancing, setIsAutoAdvancing] = useState(false);
   const contentTopRef = useRef(null);
+  const isTransitioningRef = useRef(false);
+  const autoAdvanceTimeoutRef = useRef(null);
 
   // Sincronización con el Hash de la URL
   useEffect(() => {
@@ -42,12 +45,26 @@ export default function LandingPage() {
     setActiveTab(tabId);
     window.location.hash = `#${tabId}`;
     
-    // Desplazamiento suave al inicio del contenido debajo de la barra única
-    if (contentTopRef.current) {
-      const yOffset = -75;
-      const y = contentTopRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-    }
+    // Al cambiar de pestaña, resetear scroll arriba al instante
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
+  const triggerNextSection = (nextId) => {
+    if (isTransitioningRef.current || !nextId) return;
+    isTransitioningRef.current = true;
+    setIsAutoAdvancing(true);
+
+    handleTabChange(nextId);
+
+    // Cooldown de 900ms para absorber la inercia de scroll del touchpad/mouse
+    setTimeout(() => {
+      isTransitioningRef.current = false;
+      setIsAutoAdvancing(false);
+      if (autoAdvanceTimeoutRef.current) {
+        clearTimeout(autoAdvanceTimeoutRef.current);
+        autoAdvanceTimeoutRef.current = null;
+      }
+    }, 900);
   };
 
   const handleOpenLegal = (type) => {
@@ -58,7 +75,7 @@ export default function LandingPage() {
     setLegalModalState((prev) => ({ ...prev, isOpen: false }));
   };
 
-  // Metadatos de la siguiente pestaña para el pie de página de cada pestaña
+  // Metadatos de la siguiente sección (null en contacto para no auto-avanzar)
   const getNextTabInfo = () => {
     switch (activeTab) {
       case 'inicio':
@@ -90,18 +107,99 @@ export default function LandingPage() {
           desc: 'Configuramos tus primeros 20 productos en 24h sin compromiso ni tarjeta.'
         };
       case 'contacto':
-        return {
-          nextId: 'inicio',
-          badge: 'Recorrido Completado',
-          title: 'Volver a la Presentación Principal',
-          desc: 'O escríbenos directamente a WhatsApp para resolver cualquier consulta en vivo.'
-        };
       default:
         return null;
     }
   };
 
   const nextInfo = getNextTabInfo();
+
+  // Auto-avance al terminar de scrolear la sección actual
+  useEffect(() => {
+    if (!nextInfo || !nextInfo.nextId) {
+      setIsAutoAdvancing(false);
+      return;
+    }
+
+    const checkScrollBottom = () => {
+      if (isTransitioningRef.current) return;
+
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      
+      // Si el usuario llega a los últimos 45px del final de la página
+      const isAtBottom = windowHeight + scrollY >= docHeight - 45;
+
+      if (isAtBottom) {
+        setIsAutoAdvancing(true);
+
+        if (!autoAdvanceTimeoutRef.current) {
+          autoAdvanceTimeoutRef.current = setTimeout(() => {
+            triggerNextSection(nextInfo.nextId);
+          }, 450); // 450ms al llegar al final
+        }
+      } else {
+        if (autoAdvanceTimeoutRef.current) {
+          clearTimeout(autoAdvanceTimeoutRef.current);
+          autoAdvanceTimeoutRef.current = null;
+        }
+        setIsAutoAdvancing(false);
+      }
+    };
+
+    // Si el usuario scrolea hacia abajo con la rueda estando cerca del final, avanzar al instante
+    const handleWheel = (e) => {
+      if (isTransitioningRef.current) return;
+      if (e.deltaY > 15) {
+        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        if (windowHeight + scrollY >= docHeight - 80) {
+          triggerNextSection(nextInfo.nextId);
+        }
+      }
+    };
+
+    // Detección táctil en móviles (deslizar hacia arriba cerca del final)
+    let touchStartY = 0;
+    const handleTouchStart = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        touchStartY = e.touches[0].clientY;
+      }
+    };
+    const handleTouchEnd = (e) => {
+      if (isTransitioningRef.current) return;
+      if (e.changedTouches && e.changedTouches.length > 0) {
+        const touchEndY = e.changedTouches[0].clientY;
+        const swipeDistance = touchStartY - touchEndY;
+        if (swipeDistance > 30) {
+          const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+          const windowHeight = window.innerHeight;
+          const docHeight = document.documentElement.scrollHeight;
+          if (windowHeight + scrollY >= docHeight - 80) {
+            triggerNextSection(nextInfo.nextId);
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollBottom, { passive: true });
+    window.addEventListener('wheel', handleWheel, { passive: true });
+    window.addEventListener('touchstart', handleTouchStart, { passive: true });
+    window.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', checkScrollBottom);
+      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchend', handleTouchEnd);
+      if (autoAdvanceTimeoutRef.current) {
+        clearTimeout(autoAdvanceTimeoutRef.current);
+        autoAdvanceTimeoutRef.current = null;
+      }
+    };
+  }, [activeTab, nextInfo]);
 
   return (
     <div className={styles.pageWrapper}>
@@ -148,32 +246,35 @@ export default function LandingPage() {
             <LeadCaptureSection />
           )}
 
-          {/* Barra de Navegación Secuencial al Pie de Cada Pestaña */}
+          {/* Indicador Dinámico de Siguiente Sección (Sin botón estático, cambia automáticamente por scroll) */}
           {nextInfo && (
             <section className={styles.tabFooterNav}>
               <div className="container">
-                <div className={styles.footerNavCard}>
+                <div
+                  className={styles.footerNavCard}
+                  onClick={() => triggerNextSection(nextInfo.nextId)}
+                  title="Desplaza al final o haz clic para pasar a la siguiente sección"
+                >
                   <div className={styles.footerNavText}>
                     <span className={styles.footerNavStepBadge}>{nextInfo.badge}</span>
                     <h3 className={styles.footerNavTitle}>{nextInfo.title}</h3>
                     <p className={styles.footerNavDesc}>{nextInfo.desc}</p>
                   </div>
 
-                  <div className={styles.footerNavActions}>
-                    <button
-                      type="button"
-                      onClick={() => handleTabChange(nextInfo.nextId)}
-                      className={styles.nextTabBtn}
+                  <div className={styles.footerNavActions} onClick={(e) => e.stopPropagation()}>
+                    <div
+                      className={styles.autoAdvanceIndicator}
+                      onClick={() => triggerNextSection(nextInfo.nextId)}
                     >
-                      <span>
-                        {activeTab === 'contacto' ? 'Volver al Inicio' : 'Siguiente Sección'}
-                      </span>
-                      {activeTab === 'contacto' ? (
-                        <RotateCcw size={18} className={styles.nextTabIcon} />
-                      ) : (
-                        <ArrowRight size={18} className={styles.nextTabIcon} />
-                      )}
-                    </button>
+                      <div className={`${styles.indicatorBadge} ${isAutoAdvancing ? styles.indicatorActive : ''}`}>
+                        <span className={styles.indicatorDot} />
+                        <span>{isAutoAdvancing ? 'Avanzando de sección...' : 'Desplaza al final para avanzar'}</span>
+                        <ArrowDown size={14} className={styles.bounceDownIcon} />
+                      </div>
+                      <div className={styles.indicatorProgressBar}>
+                        <div className={`${styles.indicatorProgressFill} ${isAutoAdvancing ? styles.fillActive : ''}`} />
+                      </div>
+                    </div>
 
                     <a
                       href={siteConfig.whatsappUrl}
@@ -192,11 +293,13 @@ export default function LandingPage() {
         </div>
       </main>
 
-      {/* Footer con Logo Oficial Agentico y Enlaces a Pestañas */}
-      <Footer
-        onSelectTab={handleTabChange}
-        onOpenLegal={handleOpenLegal}
-      />
+      {/* Footer con Logo Oficial Agentico y Enlaces a Pestañas (visible en la sección de contacto) */}
+      {activeTab === 'contacto' && (
+        <Footer
+          onSelectTab={handleTabChange}
+          onOpenLegal={handleOpenLegal}
+        />
+      )}
 
       {/* Botón WhatsApp Flotante Directo */}
       <FloatingWhatsApp />
