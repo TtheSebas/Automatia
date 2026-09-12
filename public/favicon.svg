@@ -1,15 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <defs>
-    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2563EB"/>
-      <stop offset="100%" stop-color="#10B981"/>
+    <linearGradient id="agenticoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066CC"/>
+      <stop offset="100%" stop-color="#0080FF"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="16" fill="#0B0F17"/>
   <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1.5"/>
-  <!-- Document with lightning bolt -->
-  <path d="M20 16 C20 14, 22 12, 24 12 L38 12 L46 20 L46 48 C46 50, 44 52, 42 52 L24 52 C22 52, 20 50, 20 48 Z" fill="none" stroke="#F8FAFC" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M38 12 L38 20 L46 20" fill="none" stroke="#F8FAFC" stroke-width="2.5" stroke-linejoin="round"/>
-  <!-- Lightning bolt / fast automation icon -->
-  <path d="M32 23 L25 34 L32 34 L28 45 L39 32 L32 32 Z" fill="url(#brandGrad)"/>
+  
+  <!-- Agentico Triangle & Nodes Symbol -->
+  <g transform="translate(10, 8) scale(0.68)">
+    <!-- Main triangular connection loops -->
+    <path d="M32 6 L10 48 C8 52, 14 56, 18 53 L50 30" fill="none" stroke="#0077E6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Outer rod on right -->
+    <line x1="33" y1="8" x2="52" y2="48" stroke="#005CB8" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Central circular loop (the 'a') -->
+    <circle cx="32" cy="34" r="14" fill="none" stroke="#0077E6" stroke-width="6"/>
+    <circle cx="32" cy="34" r="6" fill="#F8FAFC"/>
+    
+    <!-- Vertex nodes (circles) -->
+    <circle cx="32" cy="7" r="4.5" fill="#F8FAFC" stroke="#005CB8" stroke-width="2"/>
+    <circle cx="10" cy="48" r="4.5" fill="#F8FAFC" stroke="#005CB8" stroke-width="2"/>
+    <circle cx="52" cy="48" r="4.5" fill="#F8FAFC" stroke="#005CB8" stroke-width="2"/>
+  </g>
 </svg>

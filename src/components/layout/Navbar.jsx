@@ -3,7 +3,7 @@ import { Menu, X, MessageCircle, ArrowRight, Zap, FileText } from 'lucide-react'
 import { siteConfig } from '../../config/siteConfig';
 import styles from './Navbar.module.css';
 
-export default function Navbar({ onOpenVideo }) {
+export default function Navbar({ activeTab, onSelectTab, onOpenVideo }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -16,19 +16,18 @@ export default function Navbar({ onOpenVideo }) {
   }, []);
 
   const navLinks = [
-    { href: '#problema', label: 'El Problema' },
-    { href: '#demo', label: 'Cómo Funciona' },
-    { href: '#caso-real', label: 'Caso Real' },
-    { href: '#precios', label: 'Planes' },
-    { href: '#contacto', label: 'Contacto' },
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'problema', label: 'El Problema' },
+    { id: 'caso-real', label: 'Caso Real & Video' },
+    { id: 'precios', label: 'Planes' },
+    { id: 'contacto', label: 'Contacto' },
   ];
 
-  const handleNavClick = (e, href) => {
+  const handleNavClick = (e, tabId) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onSelectTab) {
+      onSelectTab(tabId);
     }
   };
 
@@ -36,12 +35,21 @@ export default function Navbar({ onOpenVideo }) {
     <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
       <div className={`container ${styles.navbarContainer}`}>
         {/* Brand Logo */}
-        <a href="#" className={styles.logo} aria-label="Automatia - Inicio">
-          <div className={styles.logoIconBox}>
-            <Zap size={20} className={styles.logoIcon} />
+        <a
+          href="#inicio"
+          onClick={(e) => handleNavClick(e, 'inicio')}
+          className={styles.logo}
+          aria-label="Agentico - Inicio"
+        >
+          <div className={styles.logoImgWrapper}>
+            <img
+              src="/agentico-logo-white.png"
+              alt="Logo Agentico"
+              className={styles.logoImg}
+            />
           </div>
           <div className={styles.logoTextGroup}>
-            <span className={styles.logoTitle}>Automatia</span>
+            <span className={styles.logoTitle}>Agentico</span>
             <span className={styles.logoBadge}>PROFORMAS 24/7</span>
           </div>
         </a>
@@ -49,17 +57,20 @@ export default function Navbar({ onOpenVideo }) {
         {/* Desktop Navigation */}
         <nav className={styles.desktopNav} aria-label="Navegación principal">
           <ul className={styles.navList}>
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                  className={styles.navLink}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isSelected = activeTab === link.id;
+              return (
+                <li key={link.id}>
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(e) => handleNavClick(e, link.id)}
+                    className={`${styles.navLink} ${isSelected ? styles.navLinkActive : ''}`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
@@ -70,7 +81,7 @@ export default function Navbar({ onOpenVideo }) {
             target="_blank"
             rel="noopener noreferrer"
             className={styles.whatsappBtn}
-            title="Escribir por WhatsApp"
+            title="Escribir por WhatsApp a Gabriel Mesías"
           >
             <MessageCircle size={18} />
             <span className={styles.whatsappBtnText}>WhatsApp</span>
@@ -78,7 +89,7 @@ export default function Navbar({ onOpenVideo }) {
 
           <a
             href="#contacto"
-            onClick={(e) => handleNavClick(e, '#contacto')}
+            onClick={(e) => handleNavClick(e, 'contacto')}
             className={styles.primaryCta}
           >
             <span>Prueba 3 Días Gratis</span>
@@ -106,25 +117,28 @@ export default function Navbar({ onOpenVideo }) {
         <div className={styles.mobileDrawerContent}>
           <nav aria-label="Navegación móvil">
             <ul className={styles.mobileNavList}>
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => handleNavClick(e, link.href)}
-                    className={styles.mobileNavLink}
-                  >
-                    <span>{link.label}</span>
-                    <ArrowRight size={16} className={styles.mobileNavArrow} />
-                  </a>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isSelected = activeTab === link.id;
+                return (
+                  <li key={link.id}>
+                    <a
+                      href={`#${link.id}`}
+                      onClick={(e) => handleNavClick(e, link.id)}
+                      className={`${styles.mobileNavLink} ${isSelected ? styles.mobileNavLinkActive : ''}`}
+                    >
+                      <span>{link.label}</span>
+                      <ArrowRight size={16} className={styles.mobileNavArrow} />
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </nav>
 
           <div className={styles.mobileDrawerActions}>
             <a
               href="#contacto"
-              onClick={(e) => handleNavClick(e, '#contacto')}
+              onClick={(e) => handleNavClick(e, 'contacto')}
               className={styles.mobileMainBtn}
             >
               Solicitar Demostración de 3 Días

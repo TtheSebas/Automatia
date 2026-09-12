@@ -11,7 +11,7 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         className={styles.button}
-        aria-label="Contactar por WhatsApp Business con Automatia"
+        aria-label="Contactar por WhatsApp Business con Agentico"
       >
         <span className={styles.onlinePulse}></span>
         <MessageCircle size={28} className={styles.icon} />

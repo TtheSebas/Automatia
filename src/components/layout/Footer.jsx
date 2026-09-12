@@ -3,7 +3,14 @@ import { Mail, MessageCircle, MapPin, Zap, Shield, ArrowUpRight } from 'lucide-r
 import { siteConfig } from '../../config/siteConfig';
 import styles from './Footer.module.css';
 
-export default function Footer({ onOpenLegal }) {
+export default function Footer({ onSelectTab, onOpenLegal }) {
+  const handleLinkClick = (e, tabId) => {
+    e.preventDefault();
+    if (onSelectTab) {
+      onSelectTab(tabId);
+    }
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={`container ${styles.footerContainer}`}>
@@ -12,10 +19,14 @@ export default function Footer({ onOpenLegal }) {
           {/* Brand Col */}
           <div className={styles.brandCol}>
             <div className={styles.brandHeader}>
-              <div className={styles.logoIconBox}>
-                <Zap size={20} />
+              <div className={styles.logoImgWrapper}>
+                <img
+                  src="/agentico-logo-white.png"
+                  alt="Agentico Logo"
+                  className={styles.logoImg}
+                />
               </div>
-              <span className={styles.brandTitle}>Automatia</span>
+              <span className={styles.brandTitle}>Agentico</span>
             </div>
             <p className={styles.brandDesc}>
               Agencia de automatización de operaciones comerciales para ferreterías, distribuidoras y comercios mayoristas. Generación de cotizaciones y proformas en PDF en tiempo récord conectadas a tu inventario.
@@ -71,11 +82,11 @@ export default function Footer({ onOpenLegal }) {
           <div className={styles.linksCol}>
             <h4 className={styles.colTitle}>Navegación</h4>
             <ul className={styles.linkList}>
-              <li><a href="#problema" className={styles.footerLink}>El Caos Manual vs Automatia</a></li>
-              <li><a href="#demo" className={styles.footerLink}>Cómo Funciona (Flujo n8n)</a></li>
-              <li><a href="#caso-real" className={styles.footerLink}>Caso Real Constructora Andes</a></li>
-              <li><a href="#precios" className={styles.footerLink}>Planes y Piloto 3 Días</a></li>
-              <li><a href="#contacto" className={styles.footerLink}>Solicitar Prueba sin Costo</a></li>
+              <li><a href="#inicio" onClick={(e) => handleLinkClick(e, 'inicio')} className={styles.footerLink}>Inicio</a></li>
+              <li><a href="#problema" onClick={(e) => handleLinkClick(e, 'problema')} className={styles.footerLink}>El Caos Manual vs Agentico</a></li>
+              <li><a href="#caso-real" onClick={(e) => handleLinkClick(e, 'caso-real')} className={styles.footerLink}>Caso Real & Video Oficial</a></li>
+              <li><a href="#precios" onClick={(e) => handleLinkClick(e, 'precios')} className={styles.footerLink}>Planes y Piloto 3 Días</a></li>
+              <li><a href="#contacto" onClick={(e) => handleLinkClick(e, 'contacto')} className={styles.footerLink}>Solicitar Prueba sin Costo</a></li>
             </ul>
           </div>
         </div>
@@ -83,7 +94,7 @@ export default function Footer({ onOpenLegal }) {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            © 2026 Automatia. Todos los derechos reservados.
+            © 2026 Agentico. Todos los derechos reservados.
           </p>
 
           <div className={styles.legalLinks}>

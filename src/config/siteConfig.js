@@ -1,7 +1,7 @@
-// Configuración centralizada de Automatia
+// Configuración centralizada de Agentico
 
 export const siteConfig = {
-  name: "Automatia",
+  name: "Agentico",
   tagline: "Sistema de Cotizaciones y Proformas Automáticas en PDF 24/7",
   email: "gabrielmesias89@gmail.com",
   location: "Ambato / Cobertura a todo Ecuador y LatAm (Remoto)",
@@ -11,7 +11,7 @@ export const siteConfig = {
   whatsappDisplay: "+593 95 904 8059",
   whatsappLocalDisplay: "0959048059",
   
-  whatsappDefaultMessage: "Hola Automatia, vi su sistema de cotizaciones y me gustaria ver una demostracion para mi negocio",
+  whatsappDefaultMessage: "Hola Agentico, vi su sistema de cotizaciones y me gustaria ver una demostracion para mi negocio",
 
   // Video demostrativo de Google Drive (Modo Embed / Preview para iframe)
   demoVideoUrl: "https://drive.google.com/file/d/1xAtm7LT-WtIsXqxt_nIR1PBv3ln-zQIZ/preview",

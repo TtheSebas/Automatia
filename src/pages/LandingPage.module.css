@@ -1,0 +1,140 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+}
+
+.mainContent {
+  flex: 1;
+  position: relative;
+  min-height: 70vh;
+}
+
+/* Animación fluida al cambiar entre pestañas */
+@keyframes fluidTabEntrance {
+  0% {
+    opacity: 0;
+    transform: translateY(18px) scale(0.994);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tabPane {
+  animation: fluidTabEntrance 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+  outline: none;
+}
+
+/* Barra de navegación inferior de cada pestaña (Next Step Bar) */
+.tabFooterNav {
+  padding: 3.5rem 0 5rem 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(11, 15, 23, 0.8) 100%);
+}
+
+.footerNavCard {
+  max-width: 960px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3.5vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+@media (min-width: 768px) {
+  .footerNavCard {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.footerNavText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.footerNavStepBadge {
+  font-size: 0.725rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #60A5FA;
+}
+
+.footerNavTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.footerNavDesc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.footerNavActions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.nextTabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  background: linear-gradient(135deg, var(--color-blue), var(--color-emerald));
+  color: #FFFFFF;
+  padding: 0.85rem 1.6rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nextTabBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+}
+
+.nextTabIcon {
+  transition: transform 0.25s ease;
+}
+
+.nextTabBtn:hover .nextTabIcon {
+  transform: translateX(3px);
+}
+
+.waQuickBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.25rem;
+  background-color: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  border-radius: var(--radius-md);
+  color: #34D399;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.waQuickBtn:hover {
+  background-color: rgba(37, 211, 102, 0.2);
+  border-color: #25D366;
+  color: #FFFFFF;
+}

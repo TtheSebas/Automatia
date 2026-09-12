@@ -31,7 +31,7 @@ export default function LegalModal({ isOpen, type, onClose }) {
           <div className={styles.titleWithIcon}>
             {isTerms ? <FileText className={styles.headerIcon} size={22} /> : <Shield className={styles.headerIcon} size={22} />}
             <h3 className={styles.title}>
-              {isTerms ? 'Términos de Servicio — Automatia' : 'Política de Privacidad — Automatia'}
+              {isTerms ? 'Términos de Servicio — Agentico' : 'Política de Privacidad — Agentico'}
             </h3>
           </div>
           <button type="button" onClick={onClose} className={styles.closeBtn} aria-label="Cerrar modal">
@@ -43,15 +43,15 @@ export default function LegalModal({ isOpen, type, onClose }) {
           {isTerms ? (
             <>
               <p className={styles.lead}>
-                Bienvenido a <strong>Automatia</strong>. Al contratar nuestros servicios de integración y generación automática de proformas, aceptas las siguientes condiciones:
+                Bienvenido a <strong>Agentico</strong>. Al contratar nuestros servicios de integración y generación automática de proformas, aceptas las siguientes condiciones:
               </p>
               <h4>1. Propiedad y Control de Datos</h4>
               <p>
-                Tu catálogo, listas de precios, inventarios en Google Sheets y bases de datos de clientes son y seguirán siendo propiedad exclusiva de tu empresa. Automatia únicamente conecta los flujos de automatización para generar los documentos solicitados.
+                Tu catálogo, listas de precios, inventarios en Google Sheets y bases de datos de clientes son y seguirán siendo propiedad exclusiva de tu empresa. Agentico únicamente conecta los flujos de automatización para generar los documentos solicitados.
               </p>
               <h4>2. Garantía y Disponibilidad del Servicio</h4>
               <p>
-                En los planes con mantenimiento activo, Automatia garantiza soporte técnico continuo y resolución prioritaria ante cualquier ajuste de APIs de terceros (WhatsApp Business, Google Workspace o servidores n8n).
+                En los planes con mantenimiento activo, Agentico garantiza soporte técnico continuo y resolución prioritaria ante cualquier ajuste de APIs de terceros (WhatsApp Business, Google Workspace o servidores n8n).
               </p>
               <h4>3. Prueba Piloto sin Costo</h4>
               <p>
@@ -65,7 +65,7 @@ export default function LegalModal({ isOpen, type, onClose }) {
           ) : (
             <>
               <p className={styles.lead}>
-                En <strong>Automatia</strong> nos tomamos con total seriedad la confidencialidad de la información comercial de nuestros clientes.
+                En <strong>Agentico</strong> nos tomamos con total seriedad la confidencialidad de la información comercial de nuestros clientes.
               </p>
               <h4>1. Información Recopilada</h4>
               <p>

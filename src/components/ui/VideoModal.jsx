@@ -68,7 +68,7 @@ export default function VideoModal({ isOpen, onClose }) {
           ) : (
             <iframe
               src={siteConfig.demoVideoUrl}
-              title="Demostración Automatia n8n Proformas"
+              title="Demostración Oficial Agentico n8n Proformas"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               allowFullScreen

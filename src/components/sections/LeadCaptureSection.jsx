@@ -19,7 +19,7 @@ export default function LeadCaptureSection() {
     setLoading(true);
 
     // Formatear mensaje para WhatsApp si el usuario desea saltar directo
-    const waText = `Hola Automatia! Solicito la prueba piloto de 3 días sin costo.\n\n*Nombre:* ${formData.nombre}\n*Empresa:* ${formData.empresa}\n*WhatsApp:* ${formData.whatsapp}\n*Rubro:* ${formData.rubro}`;
+    const waText = `Hola Agentico! Solicito la prueba piloto de 3 días sin costo.\n\n*Nombre:* ${formData.nombre}\n*Empresa:* ${formData.empresa}\n*WhatsApp:* ${formData.whatsapp}\n*Rubro:* ${formData.rubro}`;
     const directWaUrl = siteConfig.getCustomWhatsappUrl(waText);
 
     setTimeout(() => {
@@ -93,7 +93,7 @@ export default function LeadCaptureSection() {
                     Se abrió tu chat de WhatsApp para enviarnos la confirmación directa. Si no se abrió automáticamente, pulsa el botón a continuación:
                   </p>
                   <a
-                    href={siteConfig.getCustomWhatsappUrl(`Hola Automatia, soy ${formData.nombre} de ${formData.empresa} (${formData.rubro}). Quiero coordinar la carga de mis 20 productos para el piloto de 3 días.`)}
+                    href={siteConfig.getCustomWhatsappUrl(`Hola Agentico, soy ${formData.nombre} de ${formData.empresa} (${formData.rubro}). Quiero coordinar la carga de mis 20 productos para el piloto de 3 días.`)}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.waConfirmBtn}
@@ -196,7 +196,7 @@ export default function LeadCaptureSection() {
                   </button>
 
                   <p className={styles.formMicrocopy}>
-                    Garantía Automatia: Sin cobros ocultos ni spam. Te responderemos en horario comercial.
+                    Garantía Agentico: Sin cobros ocultos ni spam. Te responderemos en horario comercial.
                   </p>
                 </form>
               )}

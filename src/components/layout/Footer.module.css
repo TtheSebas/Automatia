@@ -37,15 +37,19 @@
   gap: 0.75rem;
 }
 
-.logoIconBox {
-  width: 34px;
-  height: 34px;
-  background: linear-gradient(135deg, var(--color-blue), var(--color-emerald));
-  border-radius: var(--radius-md);
+.logoImgWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #FFFFFF;
+  height: 36px;
+  width: auto;
+}
+
+.logoImg {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.4));
 }
 
 .brandTitle {

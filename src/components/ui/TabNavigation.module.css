@@ -1,0 +1,119 @@
+.tabNavWrapper {
+  position: sticky;
+  top: 72px; /* Altura de la cabecera */
+  z-index: 90;
+  background-color: rgba(11, 15, 23, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  padding: 0.65rem 0;
+  transition: all var(--transition-normal);
+}
+
+.tabBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding: 0.25rem 0.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+.tabBar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+@media (min-width: 992px) {
+  .tabBar {
+    justify-content: center;
+    gap: 0.75rem;
+  }
+}
+
+.tabBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1.15rem;
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.tabBtn:hover {
+  background-color: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.35);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.tabBtnActive {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(16, 185, 129, 0.15) 100%);
+  border-color: #3B82F6;
+  color: #FFFFFF;
+  box-shadow: 0 0 16px rgba(59, 130, 246, 0.25);
+}
+
+.tabBtnActive:hover {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.28) 0%, rgba(16, 185, 129, 0.2) 100%);
+  border-color: #60A5FA;
+}
+
+.tabIconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.tabBtnActive .tabIconBox {
+  color: #60A5FA;
+  transform: scale(1.1);
+}
+
+.tabLabelGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.tabLabel {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tabTag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: color 0.2s ease;
+}
+
+.tabBtnActive .tabTag {
+  color: #34D399;
+}
+
+.activeGlowIndicator {
+  position: absolute;
+  bottom: -4px;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, #3B82F6, #10B981);
+  border-radius: 2px;
+  box-shadow: 0 0 8px #3B82F6;
+}

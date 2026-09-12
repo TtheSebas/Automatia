@@ -282,27 +282,31 @@ export default function CaseDemoSection({ onOpenVideo }) {
             </button>
           </div>
 
-          <div className={styles.videoFrameBox} onClick={onOpenVideo}>
+          <div className={styles.videoFrameBox} onClick={onOpenVideo} title="Reproducir demostración oficial de Agentico">
             <div className={styles.videoPosterContainer}>
               <img
-                src="/agentico-logo.jpg"
-                alt="Agentico - Sistema de Automatización"
+                src="/video-poster-agentico-hd.png"
+                alt="Agentico - Demostración del Sistema de Automatización en Video HD"
                 className={styles.agenticoPoster}
               />
             </div>
             <div className={styles.videoCoverOverlay}>
               <div className={styles.videoBadgeTop}>
-                <span className={styles.agenticoPill}>SISTEMA AGENTICO</span>
-                <span className={styles.durationPill}>⏱ 45s</span>
+                <span className={styles.agenticoPill}>SISTEMA OFICIAL AGENTICO</span>
+                <div className={styles.videoQualityPills}>
+                  <span className={styles.hdPill}>HD 1080p</span>
+                  <span className={styles.durationPill}>⏱ 45s</span>
+                </div>
               </div>
               <div className={styles.videoPlayCircle}>
-                <Play size={32} fill="#FFFFFF" className={styles.playCenterIcon} />
+                <div className={styles.playPulseRing}></div>
+                <Play size={34} fill="#FFFFFF" className={styles.playCenterIcon} />
               </div>
               <span className={styles.videoCoverTitle}>
-                Haz clic para reproducir la demostración en video
+                Ver Demostración en Video (Flujo en Vivo)
               </span>
               <span className={styles.videoCoverSub}>
-                Flujo real de n8n: WhatsApp → Google Sheets → Proforma PDF
+                De WhatsApp informal a Proforma formal membretada en PDF vía n8n y Google Sheets
               </span>
             </div>
           </div>

@@ -93,12 +93,12 @@ export default function ProblemSolutionSection() {
             </div>
           </div>
 
-          {/* Col 2: Con Automatia (Flujo Automatizado) */}
+          {/* Col 2: Con Agentico (Flujo Automatizado) */}
           <div className={styles.cardAutomatia}>
             <div className={styles.badgePopular}>RECOMENDADO</div>
             <div className={styles.cardHeaderAutomatia}>
               <div className={styles.headerTitleWrap}>
-                <span className={styles.emeraldTag}>CON AUTOMATIA</span>
+                <span className={styles.emeraldTag}>CON AGENTICO</span>
                 <h3 className={styles.cardTitle}>El Flujo Automatizado 24/7</h3>
               </div>
               <span className={styles.timeTagEmerald}>&lt; 30 segundos / pedido</span>

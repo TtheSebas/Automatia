@@ -3,12 +3,11 @@ import { ArrowRight, Play, CheckCircle2, Zap, Shield, FileText, Database, Clock 
 import { siteConfig } from '../../config/siteConfig';
 import styles from './HeroSection.module.css';
 
-export default function HeroSection({ onOpenVideo, onOpenPilot }) {
-  const scrollToContact = (e) => {
+export default function HeroSection({ onSelectTab, onOpenVideo }) {
+  const handleContactClick = (e) => {
     e.preventDefault();
-    const contactElement = document.querySelector('#contacto');
-    if (contactElement) {
-      contactElement.scrollIntoView({ behavior: 'smooth' });
+    if (onSelectTab) {
+      onSelectTab('contacto');
     }
   };
 
@@ -22,8 +21,12 @@ export default function HeroSection({ onOpenVideo, onOpenPilot }) {
         {/* Text & CTAs */}
         <div className={styles.content}>
           <div className="badge-tech">
-            <Zap size={14} />
-            <span>Tecnología para Comercio, Ferreterías y Distribución</span>
+            <img
+              src="/agentico-logo-white.png"
+              alt="Logo Agentico"
+              style={{ height: '18px', width: 'auto', marginRight: '8px', objectFit: 'contain' }}
+            />
+            <span>Agentico · Automatización de Operaciones Comerciales</span>
           </div>
 
           <h1 className={styles.title}>
@@ -37,7 +40,7 @@ export default function HeroSection({ onOpenVideo, onOpenPilot }) {
           <div className={styles.ctaGroup}>
             <a
               href="#contacto"
-              onClick={scrollToContact}
+              onClick={handleContactClick}
               className={styles.mainBtn}
             >
               <span>Solicitar Demostración de 3 Días sin Costo</span>

@@ -26,11 +26,11 @@ export default function PricingSection() {
       ],
       ctaText: "Pedir Piloto Gratuito",
       highlight: false,
-      whatsappMsg: "Hola Automatia, me interesa probar el Piloto Cero Riesgo ($0 por 3 días) para mi empresa."
+      whatsappMsg: "Hola Agentico, me interesa probar el Piloto Cero Riesgo ($0 por 3 días) para mi empresa."
     },
     {
       id: "integral",
-      name: "Automatia Integral + Mantenimiento",
+      name: "Agentico Integral + Mantenimiento",
       badge: "MÁS POPULAR Y RECOMENDADO",
       price: "$250 setup",
       period: "+ $40 / mes",
@@ -44,7 +44,7 @@ export default function PricingSection() {
       ],
       ctaText: "Elegir Plan Integral",
       highlight: true,
-      whatsappMsg: "Hola Automatia, deseo contratar el plan Automatia Integral ($250 setup + $40/mes) para mi distribuidora."
+      whatsappMsg: "Hola Agentico, deseo contratar el plan Agentico Integral ($250 setup + $40/mes) para mi distribuidora."
     },
     {
       id: "base",
@@ -62,7 +62,7 @@ export default function PricingSection() {
       ],
       ctaText: "Solicitar Plan Base",
       highlight: false,
-      whatsappMsg: "Hola Automatia, me interesa contratar la Implementación Comercial Base ($250 pago único)."
+      whatsappMsg: "Hola Agentico, me interesa contratar la Implementación Comercial Base ($250 pago único)."
     }
   ];
 
@@ -147,7 +147,7 @@ export default function PricingSection() {
             </div>
           </div>
           <a
-            href={siteConfig.getCustomWhatsappUrl("Hola Automatia, tengo una consulta sobre cotizaciones para más de 1,000 productos o múltiples sucursales.")}
+            href={siteConfig.getCustomWhatsappUrl("Hola Agentico, tengo una consulta sobre cotizaciones para más de 1,000 productos o múltiples sucursales.")}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.consultBtn}
