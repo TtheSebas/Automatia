@@ -283,15 +283,26 @@ export default function CaseDemoSection({ onOpenVideo }) {
           </div>
 
           <div className={styles.videoFrameBox} onClick={onOpenVideo}>
+            <div className={styles.videoPosterContainer}>
+              <img
+                src="/agentico-logo.jpg"
+                alt="Agentico - Sistema de Automatización"
+                className={styles.agenticoPoster}
+              />
+            </div>
             <div className={styles.videoCoverOverlay}>
+              <div className={styles.videoBadgeTop}>
+                <span className={styles.agenticoPill}>SISTEMA AGENTICO</span>
+                <span className={styles.durationPill}>⏱ 45s</span>
+              </div>
               <div className={styles.videoPlayCircle}>
                 <Play size={32} fill="#FFFFFF" className={styles.playCenterIcon} />
               </div>
               <span className={styles.videoCoverTitle}>
-                Haz clic para reproducir el video explicativo
+                Haz clic para reproducir la demostración en video
               </span>
               <span className={styles.videoCoverSub}>
-                Demostración completa del flujo WhatsApp → n8n → Google Sheets → PDF
+                Flujo real de n8n: WhatsApp → Google Sheets → Proforma PDF
               </span>
             </div>
           </div>

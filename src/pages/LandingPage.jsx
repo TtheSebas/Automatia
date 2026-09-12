@@ -9,6 +9,8 @@ import LeadCaptureSection from '../components/sections/LeadCaptureSection';
 import FloatingWhatsApp from '../components/ui/FloatingWhatsApp';
 import VideoModal from '../components/ui/VideoModal';
 import LegalModal from '../components/ui/LegalModal';
+import SectionDivider from '../components/ui/SectionDivider';
+import ScrollReveal from '../components/ui/ScrollReveal';
 
 export default function LandingPage() {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -28,25 +30,47 @@ export default function LandingPage() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', backgroundColor: 'var(--bg-dark)' }}>
-      {/* Header */}
+      {/* Header Sticky */}
       <Navbar onOpenVideo={() => setVideoOpen(true)} />
 
-      {/* Main Sections */}
+      {/* Main Sections con Divisiones y Animaciones Fluidas */}
       <main style={{ flex: 1 }}>
         {/* 1. Hero Section */}
-        <HeroSection onOpenVideo={() => setVideoOpen(true)} />
+        <ScrollReveal direction="none" delay={50}>
+          <HeroSection onOpenVideo={() => setVideoOpen(true)} />
+        </ScrollReveal>
+
+        {/* Divisor Fluido 1 */}
+        <SectionDivider label="EL DOLOR MANUAL VS AUTOMATIA" />
 
         {/* 2. Problem vs Solution (El Dolor Económico) */}
-        <ProblemSolutionSection />
+        <ScrollReveal direction="up" delay={100}>
+          <ProblemSolutionSection />
+        </ScrollReveal>
 
-        {/* 3. Product Demo (Caso Real Don Carlos + Video n8n) */}
-        <CaseDemoSection onOpenVideo={() => setVideoOpen(true)} />
+        {/* Divisor Fluido 2 */}
+        <SectionDivider label="CASO REAL & DEMOSTRACIÓN EN VIDEO" />
+
+        {/* 3. Product Demo (Caso Real Don Carlos + Video con Logo Agentico) */}
+        <ScrollReveal direction="up" delay={100}>
+          <CaseDemoSection onOpenVideo={() => setVideoOpen(true)} />
+        </ScrollReveal>
+
+        {/* Divisor Fluido 3 */}
+        <SectionDivider label="PLANES SIN RIESGO" />
 
         {/* 4. Pricing & Plans (Sin Riesgo: Piloto $0, Base $250, Integral $250+$40/mes) */}
-        <PricingSection />
+        <ScrollReveal direction="up" delay={100}>
+          <PricingSection />
+        </ScrollReveal>
+
+        {/* Divisor Fluido 4 */}
+        <SectionDivider label="SOLICITAR PRUEBA PILOTO" />
 
         {/* 5. Lead Capture (Formulario 4 campos exactos) */}
-        <LeadCaptureSection />
+        <ScrollReveal direction="up" delay={100}>
+          <LeadCaptureSection />
+        </ScrollReveal>
       </main>
 
       {/* Footer con Ambato/Ecuador, WhatsApp y Modales Legales */}
