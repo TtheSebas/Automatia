@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Navbar from '../components/layout/Navbar';
 import Footer from '../components/layout/Footer';
 import TabNavigation, { TABS } from '../components/ui/TabNavigation';
 import HeroSection from '../components/sections/HeroSection';
@@ -43,9 +42,9 @@ export default function LandingPage() {
     setActiveTab(tabId);
     window.location.hash = `#${tabId}`;
     
-    // Desplazamiento suave al inicio del contenido
+    // Desplazamiento suave al inicio del contenido debajo de la barra única
     if (contentTopRef.current) {
-      const yOffset = -130;
+      const yOffset = -75;
       const y = contentTopRef.current.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
     }
@@ -106,14 +105,7 @@ export default function LandingPage() {
 
   return (
     <div className={styles.pageWrapper}>
-      {/* Header Sticky con Logo Oficial de Agentico */}
-      <Navbar
-        activeTab={activeTab}
-        onSelectTab={handleTabChange}
-        onOpenVideo={() => setVideoOpen(true)}
-      />
-
-      {/* Barra de Pestañas Interactivas Fluidas */}
+      {/* Barra de Navegación Única Superior con Logotipo de Agentico, Pestañas Fluidas y CTA */}
       <TabNavigation
         activeTab={activeTab}
         onTabChange={handleTabChange}
