@@ -21,7 +21,7 @@ export default function Footer({ onSelectTab, onOpenLegal }) {
             <div className={styles.brandHeader}>
               <div className={styles.logoImgWrapper}>
                 <img
-                  src="/agentico-logo-white.png"
+                  src="/agentico-logo-dark.png"
                   alt="Agentico Logo"
                   className={styles.logoImg}
                 />

@@ -43,7 +43,7 @@ export default function Navbar({ activeTab, onSelectTab, onOpenVideo }) {
         >
           <div className={styles.logoImgWrapper}>
             <img
-              src="/agentico-logo-white.png"
+              src="/agentico-logo-dark.png"
               alt="Logo Agentico"
               className={styles.logoImg}
             />

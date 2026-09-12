@@ -22,7 +22,7 @@ export default function HeroSection({ onSelectTab, onOpenVideo }) {
         <div className={styles.content}>
           <div className="badge-tech">
             <img
-              src="/agentico-logo-white.png"
+              src="/agentico-logo-dark.png"
               alt="Logo Agentico"
               style={{ height: '18px', width: 'auto', marginRight: '8px', objectFit: 'contain' }}
             />

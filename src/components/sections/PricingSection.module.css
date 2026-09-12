@@ -37,9 +37,9 @@
 }
 
 .planCardPopular {
-  border-color: #3B82F6;
-  background-color: #121E33;
-  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.2);
+  border-color: var(--color-blue);
+  background-color: var(--bg-subtle);
+  box-shadow: 0 16px 40px rgba(249, 115, 22, 0.2);
   transform: scale(1.02);
 }
 
@@ -191,12 +191,12 @@
 
 .planBtnSecondary:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  border-color: #60A5FA;
+  border-color: var(--color-blue);
 }
 
 .subtextGuarantee {
   font-size: 0.775rem;
-  color: #34D399;
+  color: var(--color-emerald);
   text-align: center;
   font-weight: 600;
 }
@@ -229,7 +229,7 @@
 }
 
 .shieldIcon {
-  color: #60A5FA;
+  color: var(--color-blue);
   flex-shrink: 0;
   margin-top: 0.2rem;
 }
@@ -247,9 +247,9 @@
 }
 
 .consultBtn {
-  background-color: rgba(37, 99, 235, 0.12);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  color: #60A5FA;
+  background-color: rgba(249, 115, 22, 0.12);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  color: var(--color-blue);
   padding: 0.75rem 1.25rem;
   border-radius: var(--radius-md);
   font-weight: 600;
@@ -261,5 +261,5 @@
 }
 
 .consultBtn:hover {
-  background-color: rgba(37, 99, 235, 0.22);
+  background-color: rgba(249, 115, 22, 0.22);
 }

@@ -32,13 +32,13 @@
 /* Barra de navegación inferior de cada pestaña (Next Step Bar) */
 .tabFooterNav {
   padding: 3.5rem 0 5rem 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(11, 15, 23, 0.8) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.8) 100%);
 }
 
 .footerNavCard {
   max-width: 960px;
   margin: 0 auto;
-  background: linear-gradient(135deg, rgba(30, 41, 59, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.4) 0%, rgba(15, 23, 42, 0.6) 100%);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-xl);
   padding: clamp(1.5rem, 3.5vw, 2.25rem);
@@ -67,7 +67,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #60A5FA;
+  color: var(--color-blue);
 }
 
 .footerNavTitle {
@@ -101,13 +101,13 @@
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 18px rgba(249, 115, 22, 0.4);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nextTabBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.5);
+  box-shadow: 0 6px 24px rgba(234, 88, 12, 0.5);
 }
 
 .nextTabIcon {
@@ -126,7 +126,7 @@
   background-color: rgba(37, 211, 102, 0.1);
   border: 1px solid rgba(37, 211, 102, 0.3);
   border-radius: var(--radius-md);
-  color: #34D399;
+  color: var(--color-emerald);
   font-size: 0.875rem;
   font-weight: 600;
   text-decoration: none;

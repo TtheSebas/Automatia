@@ -54,8 +54,8 @@
   width: 38px;
   height: 38px;
   border-radius: var(--radius-md);
-  background-color: rgba(37, 99, 235, 0.12);
-  color: #60A5FA;
+  background-color: rgba(249, 115, 22, 0.12);
+  color: var(--color-blue);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,7 +128,7 @@
 
 .input, .select {
   padding: 0.85rem 1rem;
-  background-color: #0E1626;
+  background-color: var(--bg-input);
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
   color: var(--text-primary);
@@ -138,8 +138,8 @@
 }
 
 .input:focus, .select:focus {
-  border-color: #3B82F6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+  border-color: var(--color-blue);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
 }
 
 .input::placeholder {
@@ -156,7 +156,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  background: linear-gradient(135deg, var(--color-blue), #1D4ED8);
+  background: linear-gradient(135deg, var(--color-blue), var(--color-blue-hover));
   color: #FFFFFF;
   padding: 1rem 1.75rem;
   font-size: 1.05rem;
@@ -171,7 +171,7 @@
 
 .submitBtn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 10px 30px rgba(249, 115, 22, 0.5);
 }
 
 .submitBtn:disabled {
@@ -202,14 +202,14 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background-color: rgba(16, 185, 129, 0.12);
+  background-color: rgba(234, 88, 12, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .successCheck {
-  color: #10B981;
+  color: var(--color-emerald);
 }
 
 .successTitle {

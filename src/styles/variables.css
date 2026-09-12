@@ -1,28 +1,29 @@
 :root {
-  /* Paleta Profesional B2B Dark/Clean */
-  --bg-dark: #0B0F17;
-  --bg-subtle: #111827;
-  --bg-card: #151E2E;
-  --bg-card-hover: #1C273D;
-  --bg-card-elevated: #1E293B;
-  --bg-input: #0E1626;
+  /* Paleta Profesional B2B Light/Orange */
+  --bg-dark: #FFFFFF; /* Principal */
+  --bg-subtle: #FFF7ED; /* Fondo sutil naranja claro */
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #FFEDD5; /* Hover card naranja suave */
+  --bg-card-elevated: #FFFFFF;
+  --bg-input: #FFFFFF;
 
   /* Textos */
-  --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-inverse: #0B0F17;
+  --text-primary: #111827; /* Gris muy oscuro */
+  --text-secondary: #4B5563; /* Gris medio */
+  --text-muted: #9CA3AF;
+  --text-inverse: #FFFFFF; /* Texto inverso (ej: sobre botón naranja) */
 
-  /* Acentos Tecnológicos: Azul Eléctrico y Verde Esmeralda */
-  --color-blue: #2563EB;
-  --color-blue-hover: #1D4ED8;
-  --color-blue-light: rgba(37, 99, 235, 0.12);
-  --color-blue-glow: rgba(37, 99, 235, 0.35);
+  /* Acentos Tecnológicos: Naranja (reemplazando azul) */
+  --color-blue: #F97316; /* Naranja principal */
+  --color-blue-hover: #EA580C; /* Naranja oscuro */
+  --color-blue-light: rgba(249, 115, 22, 0.12);
+  --color-blue-glow: rgba(249, 115, 22, 0.35);
 
-  --color-emerald: #10B981;
-  --color-emerald-hover: #059669;
-  --color-emerald-light: rgba(16, 185, 129, 0.12);
-  --color-emerald-glow: rgba(16, 185, 129, 0.3);
+  /* Acentos Tecnológicos: Naranja/Terracota (reemplazando esmeralda) */
+  --color-emerald: #EA580C;
+  --color-emerald-hover: #C2410C;
+  --color-emerald-light: rgba(234, 88, 12, 0.12);
+  --color-emerald-glow: rgba(234, 88, 12, 0.3);
 
   /* WhatsApp Oficial */
   --color-whatsapp: #25D366;
@@ -34,16 +35,16 @@
   --color-red: #EF4444;
   --color-red-light: rgba(239, 68, 68, 0.12);
 
-  /* Bordes & Sombras */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-medium: rgba(255, 255, 255, 0.14);
-  --border-active: rgba(59, 130, 246, 0.45);
+  /* Bordes & Sombras para modo claro */
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.14);
+  --border-active: rgba(249, 115, 22, 0.45);
 
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.6);
-  --shadow-blue: 0 8px 30px rgba(37, 99, 235, 0.25);
-  --shadow-emerald: 0 8px 30px rgba(16, 185, 129, 0.25);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.1);
+  --shadow-blue: 0 8px 30px rgba(249, 115, 22, 0.25);
+  --shadow-emerald: 0 8px 30px rgba(234, 88, 12, 0.25);
 
   /* Tipografía */
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;

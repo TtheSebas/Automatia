@@ -62,7 +62,7 @@ export default function TabNavigation({ activeTab, onTabChange }) {
         >
           <div className={styles.logoImgWrapper}>
             <img
-              src="/agentico-logo-white.png"
+              src="/agentico-logo-dark.png"
               alt="Logo Agentico"
               className={styles.logoImg}
             />
