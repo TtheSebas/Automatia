@@ -293,10 +293,6 @@ export default function CaseDemoSection({ onOpenVideo }) {
             <div className={styles.videoCoverOverlay}>
               <div className={styles.videoBadgeTop}>
                 <span className={styles.agenticoPill}>SISTEMA OFICIAL AGENTICO</span>
-                <div className={styles.videoQualityPills}>
-                  <span className={styles.hdPill}>HD 1080p</span>
-                  <span className={styles.durationPill}>⏱ 45s</span>
-                </div>
               </div>
               <div className={styles.videoPlayCircle}>
                 <div className={styles.playPulseRing}></div>

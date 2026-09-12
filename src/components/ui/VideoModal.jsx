@@ -27,7 +27,6 @@ export default function VideoModal({ isOpen, onClose }) {
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <div className={styles.titleGroup}>
-            <span className="badge-tech">CALIDAD FULL HD 1080p</span>
             <h3 className={styles.title}>Cómo viaja un mensaje de WhatsApp a una proforma formal</h3>
           </div>
           <div className={styles.headerActions}>
